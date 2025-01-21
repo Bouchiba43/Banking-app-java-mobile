@@ -28,4 +28,7 @@
     <string name="return_button_value">RETURN TO HOMEPAGE</string>
     <string name="withdraw_title_value">WITHDRAW</string>
     <string name="withdraw_value_hint">Enter the amount to be withdrawed</string>
+    <string name="receiver_label_value">Username Of  the receiver</string>
+    <string name="amount_label_value">desidered amount to be sent</string>
+    <string name="amount_label_value1">desidered amount to be sent</string>
 </resources>

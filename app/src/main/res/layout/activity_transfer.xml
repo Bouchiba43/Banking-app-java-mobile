@@ -2,15 +2,16 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/homepage_title"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomepageActivity">
+    android:background="#D4EFAD"
+    tools:context=".TransferActivity">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#D4EFAD"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
@@ -26,40 +27,43 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/username_display"
-            android:layout_width="wrap_content"
+            android:id="@+id/transfer_title"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textColor="#5AC55E"
             android:layout_marginTop="16dp"
-            android:layout_gravity="center"
-            android:text="Welcome, User!" />
+            android:text="@string/transfer_button_value"
+            android:textAlignment="center"
+            android:textColor="#5AC55E"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/balance_display"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="8dp"
-            android:text="Your balance: $0.00"
-            android:textColor="#5AC55E"
-            android:textSize="24sp" />
-
-        <Button
-            android:id="@+id/deposit_button"
+            android:id="@+id/receiver_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:background="#78D54C"
-            android:text="@string/deposit_button_value" />
+            android:text="@string/receiver_label_value" />
 
-        <Button
-            android:id="@+id/withdraw_button"
+        <EditText
+            android:id="@+id/receiver_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="#78D54C"
-            android:text="@string/withdraw_button_value" />
+            android:background="#FFFDFD"
+            android:ems="10"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/amount_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/amount_label_value" />
+
+        <EditText
+            android:id="@+id/amount_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="text" />
 
         <Button
             android:id="@+id/transfer_button"
@@ -73,9 +77,10 @@
             android:id="@+id/return_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:background="#586B58"
-            android:text="@string/logout_button_value" />
+            android:layout_marginTop="16dp"
+            android:text="@string/return_button_value"
+            />
 
 
     </LinearLayout>

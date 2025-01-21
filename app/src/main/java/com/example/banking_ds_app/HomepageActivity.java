@@ -1,7 +1,5 @@
 package com.example.banking_ds_app;
 
-import static java.lang.System.exit;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -17,8 +15,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class HomepageActivity extends AppCompatActivity {
 
+    private static final int TRANSFER_REQUEST = 1;
     private DatabaseHelper dbHelper;
     private TextView balanceDisplay;
+    private String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +32,10 @@ public class HomepageActivity extends AppCompatActivity {
         Button depositButton = findViewById(R.id.deposit_button);
         Button withdrawButton = findViewById(R.id.withdraw_button);
         Button transferButton = findViewById(R.id.transfer_button);
-        Button historyButton = findViewById(R.id.history_button);
         balanceDisplay = findViewById(R.id.balance_display);
         TextView usernameDisplay = findViewById(R.id.username_display);
 
-        String username = getIntent().getStringExtra("username");
+        username = getIntent().getStringExtra("username");
         if (username == null) {
             balanceDisplay.setText("Balance not available.");
             usernameDisplay.setText("Welcome!");
@@ -44,7 +43,7 @@ public class HomepageActivity extends AppCompatActivity {
         }
 
         usernameDisplay.setText("Welcome, " + username + "!");
-        displayBalance(username);
+        displayBalance();
 
         depositButton.setOnClickListener(v -> {
             Intent intent = new Intent(HomepageActivity.this, DepositActivity.class);
@@ -58,8 +57,10 @@ public class HomepageActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        transferButton.setOnClickListener(v -> startTransfer());
+
         logoutButton.setOnClickListener(v -> {
-            exit(0);
+            finish(); // Better than System.exit(0)
         });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.homepage_title), (v, insets) -> {
@@ -69,28 +70,41 @@ public class HomepageActivity extends AppCompatActivity {
         });
     }
 
-    private void displayBalance(String username) {
-        try {
-            SQLiteDatabase db = dbHelper.getReadableDatabase();
-            Cursor cursor = db.rawQuery(
-                    "SELECT balance FROM " + DatabaseHelper.USERS_TABLE + " WHERE username = ?",
-                    new String[]{username}
-            );
+    private void startTransfer() {
+        Intent intent = new Intent(this, TransferActivity.class);
+        intent.putExtra("username", username);
+        startActivityForResult(intent, TRANSFER_REQUEST);
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == TRANSFER_REQUEST && resultCode == RESULT_OK) {
+            displayBalance(); // Refresh the balance after successful transfer
+        }
+    }
+
+    private void displayBalance() {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        try (Cursor cursor = db.rawQuery(
+                "SELECT balance FROM " + DatabaseHelper.USERS_TABLE + " WHERE username = ?",
+                new String[]{username})) {
             if (cursor != null && cursor.moveToFirst()) {
                 double balance = cursor.getDouble(0);
                 balanceDisplay.setText(String.format("Your Balance: $%.2f", balance));
             } else {
                 balanceDisplay.setText("Balance not available.");
             }
-
-            if (cursor != null) {
-                cursor.close();
-            }
         } catch (Exception e) {
             e.printStackTrace();
             balanceDisplay.setText("Error retrieving balance.");
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        displayBalance(); // Refresh balance when returning to the activity
     }
 
     @Override
