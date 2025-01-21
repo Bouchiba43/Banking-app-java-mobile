@@ -18,4 +18,8 @@
     <string name="login_text">Already have an account? Login</string>
     <string name="homepage_title_value">Welcome</string>
     <string name="balance_label_value">Your Balance Is:</string>
+    <string name="deposit_button_value">DEPOSIT CASH</string>
+    <string name="withdraw_button_value">WITHDRAW</string>
+    <string name="history_button_value">HISTORY OF TRANSACTIONS</string>
+    <string name="logout_button_value">LOGOUT</string>
 </resources>

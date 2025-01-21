@@ -1,8 +1,11 @@
 package com.example.banking_ds_app;
 
+import static java.lang.System.exit;
+
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -24,6 +27,7 @@ public class HomepageActivity extends AppCompatActivity {
 
         dbHelper = new DatabaseHelper(this);
 
+        Button logoutButton = findViewById(R.id.logout_button);
         balanceDisplay = findViewById(R.id.balance_display);
         TextView usernameDisplay = findViewById(R.id.username_display);
 
@@ -38,6 +42,9 @@ public class HomepageActivity extends AppCompatActivity {
         displayBalance(username);
 
 
+        logoutButton.setOnClickListener(v -> {
+            exit(0);
+        });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.homepage_title), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

@@ -11,7 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#D4EFAD"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
 
         <TextView
             android:id="@+id/app_title"
@@ -43,6 +45,37 @@
             android:textColor="#5AC55E"
             android:textSize="24sp" />
 
+        <Button
+            android:id="@+id/deposit_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="#78D54C"
+            android:text="@string/deposit_button_value" />
+
+        <Button
+            android:id="@+id/withdraw_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#78D54C"
+            android:text="@string/withdraw_button_value" />
+
+        <Button
+            android:id="@+id/history_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#78D54C"
+            android:text="@string/history_button_value" />
+
+        <Button
+            android:id="@+id/logout_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#586B58"
+            android:text="@string/logout_button_value" />
 
 
     </LinearLayout>
