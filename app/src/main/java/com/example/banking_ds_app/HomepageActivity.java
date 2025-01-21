@@ -32,7 +32,7 @@ public class HomepageActivity extends AppCompatActivity {
         Button depositButton = findViewById(R.id.deposit_button);
         Button withdrawButton = findViewById(R.id.withdraw_button);
         Button transferButton = findViewById(R.id.transfer_button);
-        Button historyButton = findViewById(R.id.deposit_button);
+        Button historyButton = findViewById(R.id.history_button);
         balanceDisplay = findViewById(R.id.balance_display);
         TextView usernameDisplay = findViewById(R.id.username_display);
 
@@ -48,6 +48,12 @@ public class HomepageActivity extends AppCompatActivity {
 
         depositButton.setOnClickListener(v -> {
             Intent intent = new Intent(HomepageActivity.this, DepositActivity.class);
+            intent.putExtra("username", username);
+            startActivity(intent);
+        });
+
+        withdrawButton.setOnClickListener(v -> {
+            Intent intent = new Intent(HomepageActivity.this, WithdrawActivity.class);
             intent.putExtra("username", username);
             startActivity(intent);
         });

@@ -26,4 +26,6 @@
     <string name="deposit_label_value">DEPOSIT</string>
     <string name="deposit_hint_value">Enter the amout to deposit</string>
     <string name="return_button_value">RETURN TO HOMEPAGE</string>
+    <string name="withdraw_title_value">WITHDRAW</string>
+    <string name="withdraw_value_hint">Enter the amount to be withdrawed</string>
 </resources>

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D4EFAD"
-    tools:context=".DepositActivity">
+    tools:context=".WithdrawActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,24 +24,24 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/deposit_title"
+            android:id="@+id/withdraw_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/deposit_label_value"
+            android:layout_marginTop="16dp"
+            android:text="@string/withdraw_title_value"
             android:textAlignment="center"
             android:textColor="#5AC55E"
-            android:layout_marginTop="16dp"
             android:textSize="24sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/deposit_value"
+            android:id="@+id/withdraw_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:background="#FFFFFF"
             android:ems="10"
-            android:layout_marginTop="16dp"
-            android:hint="@string/deposit_hint_value"
+            android:hint="@string/withdraw_value_hint"
             android:inputType="text" />
 
         <Button
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="#78D54C"
-            android:text="@string/deposit_button_value" />
+            android:text="@string/withdraw_button_value" />
 
         <Button
             android:id="@+id/return_button"
@@ -61,4 +61,5 @@
             android:text="@string/return_button_value" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

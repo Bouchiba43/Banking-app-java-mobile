@@ -28,7 +28,7 @@ public class DepositActivity extends AppCompatActivity {
 
         String currentUsername = getIntent().getStringExtra("username");
 
-        Button depositButton = findViewById(R.id.deposit_button);
+        Button depositButton = findViewById(R.id.withdraw_button);
         EditText depositValue = findViewById(R.id.deposit_value);
         Button returnButton = findViewById(R.id.return_button);
 
