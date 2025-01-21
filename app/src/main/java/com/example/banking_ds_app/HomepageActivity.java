@@ -2,6 +2,7 @@ package com.example.banking_ds_app;
 
 import static java.lang.System.exit;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -27,7 +28,11 @@ public class HomepageActivity extends AppCompatActivity {
 
         dbHelper = new DatabaseHelper(this);
 
-        Button logoutButton = findViewById(R.id.logout_button);
+        Button logoutButton = findViewById(R.id.return_button);
+        Button depositButton = findViewById(R.id.deposit_button);
+        Button withdrawButton = findViewById(R.id.withdraw_button);
+        Button transferButton = findViewById(R.id.transfer_button);
+        Button historyButton = findViewById(R.id.deposit_button);
         balanceDisplay = findViewById(R.id.balance_display);
         TextView usernameDisplay = findViewById(R.id.username_display);
 
@@ -41,6 +46,11 @@ public class HomepageActivity extends AppCompatActivity {
         usernameDisplay.setText("Welcome, " + username + "!");
         displayBalance(username);
 
+        depositButton.setOnClickListener(v -> {
+            Intent intent = new Intent(HomepageActivity.this, DepositActivity.class);
+            intent.putExtra("username", username);
+            startActivity(intent);
+        });
 
         logoutButton.setOnClickListener(v -> {
             exit(0);
