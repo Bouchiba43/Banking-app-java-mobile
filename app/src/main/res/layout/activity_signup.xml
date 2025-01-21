@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homepage_title"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D4EFAD"
+    tools:context=".SignupActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/app_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_title_value"
+            android:textAlignment="center"
+            android:textColor="#5AC55E"
+            android:textSize="48sp" />
+
+        <TextView
+            android:id="@+id/signup_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/signup_title_value"
+            android:textAlignment="center"
+            android:textColor="#5AC55E"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="122dp"
+            app:srcCompat="@drawable/icons8_add_48" />
+
+        <TextView
+            android:id="@+id/username_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/username_label_value"
+            android:textColor="#3CA62F"
+            android:textColorLink="#49853C"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/username_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/username_hint_value"
+            android:inputType="text" />
+
+
+        <TextView
+            android:id="@+id/card_number_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/card_number_value"
+            android:textColor="#3CA62F"
+            android:textColorLink="#49853C"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/card_number_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/card_number_hint_value"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/password_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/password_label_value"
+            android:textColor="#379E1E"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/password_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/password_hint_value"
+            android:inputType="textPassword" />
+
+        <TextView
+
+            android:id="@+id/confirmPassword_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/confirmPassword_value"
+            android:textColor="#379E1E"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/confirm_pass_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/confirmPassword_hint_value"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/signup_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#78D54C"
+            android:text="@string/signup_button_value" />
+
+        <TextView
+            android:id="@+id/signup_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login_text" />
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#78D54C"
+            android:text="@string/login_button_text_value" />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

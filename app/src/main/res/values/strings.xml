@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Banking-ds-app</string>
+    <string name="app_title_value">"FreeCash Bank "</string>
+    <string name="login_title_value">"LOGIN"</string>
+    <string name="welcome_value">"Welcome to FreeCash Bank"</string>
+    <string name="signup_title_value">"SIGNUP"</string>
+    <string name="username_label_value">Username:</string>
+    <string name="username_hint_value">Enter your Username</string>
+    <string name="password_label_value">Password:</string>
+    <string name="password_hint_value">Enter your Password</string>
+    <string name="login_button_text_value">Login</string>
+    <string name="signup_text_value">Don\'t have an account? Register</string>
+    <string name="signup_button_value">Signup </string>
+    <string name="confirmPassword_value">Confirm Password</string>
+    <string name="card_number_value">Card Number:</string>
+    <string name="card_number_hint_value">Enter your Card Number</string>
+    <string name="confirmPassword_hint_value">Confirm your password</string>
+    <string name="login_text">Already have an account? Login</string>
+    <string name="homepage_title_value">Welcome</string>
+    <string name="balance_label_value">Your Balance Is:</string>
+</resources>
